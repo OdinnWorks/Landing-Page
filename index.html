@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Travel</title>
+
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <nav class="navbar">
+            <h3 class="logo">Travel</h3>
+
+            <div class="nav">
+                <a href="#home">Home</a>
+                <a href="#desti">Destinations</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+        <section id="home" class="section dark-bg">
+            <div class="hero-section">
+                <h1>This website is <br />awesome</h1>
+                <p>
+                    Find various best tourist destinations at affordable prices.
+                    <br />
+                    Enjoy a journey full of new experiences with <br />professional and trusted
+                    services.
+                </p>
+
+                <a href="#">Sign up</a>
+            </div>
+
+            <div class="img">
+                <img src="img/main.jpg" alt="" />
+            </div>
+        </section>
+
+        <section id="desti" class="section light-bg">
+            <h1>Popular Destinations</h1>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="img/1.jpeg" alt="destinations-img" />
+                    </div>
+                    <div class="card-body">
+                        <h3>Borobudur</h3>
+                        <p>A magnificent temple with history and stunning sunrises</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="img/2.jpeg" alt="destinations-img" />
+                    </div>
+                    <div class="card-body">
+                        <h3>Bromo</h3>
+                        <p>An iconic mountain with the best sunrise views in Indonesia.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="img/3.jpeg" alt="destinations-img" />
+                    </div>
+                    <div class="card-body">
+                        <h3>Bali</h3>
+                        <p>
+                            A tourist island with beautiful beaches, unique culture, and a tropical
+                            atmosphere.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="img/4.jpg" alt="destinations-img" />
+                    </div>
+                    <div class="card-body">
+                        <h3>Raja Ampat</h3>
+                        <p>
+                            An underwater paradise with the most beautiful coral reefs in the world.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quote" class="section light-bg">
+            <div class="container">
+                <p class="text">
+                    What an amazing trip! The views were beautiful, <br />
+                    the service was friendly, and everything was well organized. <br />
+                    The best vacation I've ever had!
+                </p>
+                <p class="author">— Thor, God of Thunder</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="text">
+                    <p class="title">Call to action! It's time!</p>
+                    <p>Book your dream trip now and experience an unforgettable holiday!</p>
+                </div>
+
+                <a href="#">Sign up</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>Copyright © Travel Explore 2025</p>
+        </footer>
+
+        <script>
+            const navbar = document.querySelector('.navbar');
+            const sections = document.querySelectorAll('.section');
+
+            const options = {
+                threshold: 0.5,
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('light-bg')) {
+                            navbar.classList.add('light');
+                        } else {
+                            navbar.classList.remove('light');
+                        }
+                    }
+                });
+            }, options);
+
+            sections.forEach((section) => {
+                observer.observe(section);
+            });
+        </script>
+    </body>
+</html>
